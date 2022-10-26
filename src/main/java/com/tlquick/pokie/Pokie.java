@@ -2,6 +2,7 @@ package com.tlquick.pokie;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,7 +33,7 @@ public class Pokie
     }
     public void spin()
     {
-        double wager = player.getBet()*betLines;
+        double wager = player.getBet()* betLines;
         player.placeBet(wager);
         turnover += wager;
         spins ++;
@@ -46,7 +47,7 @@ public class Pokie
     {
         double amount = player.payout(lines.payOff(betLines));
         player.updateBalance(amount);
-        payouts +=amount;
+        payouts += amount;
     }
     public double getPayOut()
     {

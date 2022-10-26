@@ -1,6 +1,7 @@
 package com.tlquick.pokie;
 
 import com.tlquick.utils.Entity;
+
 import com.tlquick.utils.Symbol;
 
 public class Line extends Entity
