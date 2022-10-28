@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 @SpringBootApplication
 
 @RestController //reponseBody+controller component
-
 public class PokieApplication {
 
 	public static void main(String[] args) {

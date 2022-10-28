@@ -9,10 +9,6 @@ public class Player
     private double bet = 1.0;
     private int games = 0;
 
-    public boolean noBet()
-    {
-        return bet == 0.0;
-    }
     public boolean canBet(int lines)
     {
         return balance >= bet*lines;
