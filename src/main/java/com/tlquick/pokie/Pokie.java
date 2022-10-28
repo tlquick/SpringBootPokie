@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Component;
 
+import com.tlquick.utils.Symbol;
+
 @Component
 public class Pokie
 {
@@ -16,10 +18,11 @@ public class Pokie
     private Player player;
     @Autowired
     private Lines lines;
-    private int betLines;
-
+    private int betLines = 1;
+    private String msg = "";
    
-    public void addCredit(double amount)
+    
+	public void addCredit(double amount)
     {
         player.updateBalance(amount);
     }
@@ -43,11 +46,16 @@ public class Pokie
     {
         return lines.getResult();
     }
+    
     public void payOut()
     {
         double amount = player.payout(lines.payOff(betLines));
         player.updateBalance(amount);
         payouts += amount;
+        if ( amount > 0)
+            setMsg("Congratulations! You won " + amount);
+        else
+        	setMsg("");
     }
     public double getPayOut()
     {
@@ -81,13 +89,19 @@ public class Pokie
     {
         return payouts;
     }
+    public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
     public void show()
     {
         System.out.println(toString());
     }
     public String toString()
     {   
-        String s = "Pokie Bandit:";
+        String s = "Cherry Bomb:";
         s += " payouts = $" + payouts;
         s += " turnover = $" + turnover;
         s += " spins = " + spins;

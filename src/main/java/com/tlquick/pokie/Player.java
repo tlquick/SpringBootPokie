@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Player 
 {
     private double balance = 0.0;
-    private double bet = 0.0;
+    private double bet = 1.0;
     private int games = 0;
 
     public boolean noBet()

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cherry Bomb</title>
+</head>
+<body>
+<img src="/CherryBomb.JPG">
+<p> Player Balance: <strong th:text="${playerBalance}">100000</strong></p>
+<a th:href="@{/addCredit}" class="btn" >Add $20 Credit</a>
+
+<a th:href="@{/collect}" class="btn" >Collect</a>
+
+<p><strong th:text="${msg}">Play Now</strong></p>
+<table class="table">
+            <tr th:each="row: ${images}">
+                <td th:each="value: ${row}">
+                        <img th:src="@{${'/' + value}}" src="/Jackpot.JPG">
+                    </div>
+                </td>
+            </tr>
+        </table>
+	
+      <div>
+      	<a th:href="@{/lines/{id}(id=1)}" class="btn">1 Line</a>
+      	<a th:href="@{/lines/{id}(id=2)}" class="btn">2 Lines</a>
+      	<a th:href="@{/lines/{id}(id=3)}" class="btn">3 Lines</a>
+      </div>
+      <div>
+      	<a th:href="@{/credits/{id}(id=1)}" class="btn">1 Credit</a>
+      	<a th:href="@{/credits/{id}(id=5)}" class="btn">5 Credits</a>
+      	<a th:href="@{/credits/{id}(id=10)}" class="btn">10 Credits</a>
+      </div>
+      <a th:href="@{/spin}" class="btn">Spin</a>
+      <div >
+	    <p> TurnOver: <strong th:text="${turnOver}">100000</strong></p>
+	    <p> PayOuts: <strong th:text="${payOuts}">0</strong></p>
+	    <p> Spins: <strong th:text="${spins}">1000</strong></p>
+
+	</div>
+      
+</body>
+</html>

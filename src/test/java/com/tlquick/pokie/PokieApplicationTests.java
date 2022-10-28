@@ -31,7 +31,7 @@ class PokieApplicationTests {
 	void testPlayerInit() {
 		 Player player =  pokie.player();
 		 assertEquals(player.getBalance(), 0.0);
-	     assertThat(player.toString(), equalTo("Player: bet $0.0 balance $0.0 games played 0"));
+	     assertThat(player.toString(), equalTo("Player: bet $1.0 balance $0.0 games played 0"));
 	}
 	@Test
 	void testPlayerBalance() {
@@ -45,7 +45,6 @@ class PokieApplicationTests {
 	@Test
 	void testPlayerBet() {
 		 Player player =  pokie.player();
-		 assertTrue(player.noBet());
 		 player.setBet(1);
 		 assertEquals(player.getBet(), 1.0);
 		 assertFalse(player.canBet(1));
