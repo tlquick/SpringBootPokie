@@ -32,7 +32,7 @@ public class PokieTest {
 	@Test
 	void testPokie_Payout() {
 		pokie.payOut();
-		assertEquals("Congratulations! You won 200.0", pokie.getMsg());
+		assertEquals("Congratulations! You won $200", pokie.getMsg());
 	}
 	@Test
 	void testPokie_toString() {

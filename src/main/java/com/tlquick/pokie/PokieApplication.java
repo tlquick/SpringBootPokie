@@ -70,5 +70,9 @@ public class PokieApplication {
 		  mav.addObject("images", pokie.lines().getResultImages());
 		  return  mav; 
 	  }
-	
+	  @GetMapping("/stop") 
+	  public void stop() { 
+		  
+		  System.exit(0);
+	  }
 }
