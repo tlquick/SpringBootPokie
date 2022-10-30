@@ -1,17 +1,15 @@
 package com.tlquick.pokie;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import org.springframework.web.servlet.ModelAndView;
 
 @SpringBootApplication
-
 @RestController //reponseBody+controller component
 public class PokieApplication {
 
@@ -22,8 +20,13 @@ public class PokieApplication {
 	@Autowired
     private Pokie pokie;
  
-    @GetMapping("/index")
-    public ModelAndView viewHomePage() {
+	@GetMapping("/index")
+    public ModelAndView homePage() {
+		pokie.reset();
+    	 return  getModelAndView(); 
+    }
+    @GetMapping("/")
+    public ModelAndView viewHomePage(){
     	 return  getModelAndView(); 
     }
 	
@@ -40,7 +43,7 @@ public class PokieApplication {
 	  @GetMapping("/credits/{id}") 
 	  public ModelAndView credits(@PathVariable int id) { 
 		  pokie.player().setBet(id); 
-		  return  getModelAndView(); 
+		  return  getModelAndView();
 	  }
 	  @GetMapping("/lines/{id}") 
 	  public ModelAndView lines(@PathVariable int id) { 
@@ -48,7 +51,7 @@ public class PokieApplication {
 		  return  getModelAndView(); 
 	  }
 	  @GetMapping("/spin") 
-	  public ModelAndView spin(Model model) { 
+	  public ModelAndView spin() { 
 
 		  if(pokie.player().canBet(pokie.getBetLines()))
 		  {
@@ -70,6 +73,7 @@ public class PokieApplication {
 		  mav.addObject("images", pokie.lines().getResultImages());
 		  return  mav; 
 	  }
+	  
 	  @GetMapping("/stop") 
 	  public void stop() { 
 		  

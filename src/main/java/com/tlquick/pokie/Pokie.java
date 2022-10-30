@@ -1,11 +1,8 @@
 package com.tlquick.pokie;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import org.springframework.stereotype.Component;
 
-import com.tlquick.utils.Symbol;
 
 @Component
 public class Pokie
@@ -34,6 +31,7 @@ public class Pokie
     public void betLines(int lines)
     {
         betLines = lines;
+        
     }
     public void spin()
     {
@@ -47,7 +45,16 @@ public class Pokie
     {
         return lines.getResult();
     }
-    
+    public void reset()
+    {
+    	player = new Player();
+    	lines=new Lines();
+    	betLines = 1;
+    	spins = 0;
+        turnover = 0.0;
+        payouts = 0.0;
+        msg = DEFAULT_MSG;
+    }
     public void payOut()
     {
         double amount = player.payout(lines.payOff(betLines));

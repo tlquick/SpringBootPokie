@@ -2,6 +2,8 @@ package com.tlquick.pokie;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +20,14 @@ class PokieApplicationTests {
 
 	@Autowired
 	PokieApplication app;
+	
+	
 	@Test
 	void testPokieApplicationIndex() {
 		
 		assertNotNull(app.viewHomePage());
 	}
+	
 	@Test
 	void testPokieApplicationAddCredit() {
 		
