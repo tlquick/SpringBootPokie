@@ -1,0 +1,51 @@
+@charset "ISO-8859-1";
+
+strong {
+    font-weight: 700;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.container{
+	background-color: white;
+	width: 500px;
+  	height: 700px;
+	border: 5px solid #5b6f90;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+.btn {
+  border-radius: 4rem;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+.stdBtn {
+	border: 5px;
+	 background-color: #5b6f90;
+	 font-size: 16px;
+	 padding: 10px 24px;
+}
+.ascent{
+	color:#5b6f90;
+}
+.table{
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+.balance, .lines, .credits{
+	margin: 0 auto;
+	padding: 5px 5px;
+	display: inline-block
+}
+.spinBtn {
+	background-color: #FF0000;
+	font-size: 24px;
+	border: 10px;
+	padding: 36px 36px;
+	border-radius: 10rem;
+}

@@ -39,9 +39,9 @@ public class Player
     {
         return bet;
     }
-    public double getBalance()
+    public int getBalance()
     {
-        return balance;
+        return (int)balance;
     }
     public int getGames()
     {

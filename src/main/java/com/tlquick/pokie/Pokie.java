@@ -19,7 +19,8 @@ public class Pokie
     @Autowired
     private Lines lines;
     private int betLines = 1;
-    private String msg = "";
+    private String DEFAULT_MSG = "Press Spin";
+    private String msg = DEFAULT_MSG;
    
     
 	public void addCredit(double amount)
@@ -53,9 +54,9 @@ public class Pokie
         player.updateBalance(amount);
         payouts += amount;
         if ( amount > 0)
-            setMsg("Congratulations! You won " + amount);
+            setMsg("Congratulations! You won $" + ((int)amount));
         else
-        	setMsg("");
+        	setMsg(DEFAULT_MSG);
     }
     public double getPayOut()
     {
@@ -81,13 +82,13 @@ public class Pokie
     {
         return spins;
     }
-    public double turnover()
+    public int turnover()
     {
-        return turnover;
+        return (int)turnover;
     }
-    public double payouts()
+    public int payouts()
     {
-        return payouts;
+        return (int)payouts;
     }
     public String getMsg() {
 		return msg;
