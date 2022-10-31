@@ -1,8 +1,6 @@
 package com.tlquick.pokie;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +17,6 @@ class PokieApplicationTests {
 
 	@Autowired
 	PokieApplication app;
-	
 	
 	@Test
 	void testPokieApplicationIndex() {
@@ -47,5 +44,8 @@ class PokieApplicationTests {
 		
 		assertNotNull(app.lines(1));
 	}
-	
+
+	public static void afterclass() {
+	    System.out.println("after class");
+	}
 }
