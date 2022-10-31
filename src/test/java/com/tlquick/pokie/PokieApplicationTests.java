@@ -2,7 +2,6 @@ package com.tlquick.pokie;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import javax.servlet.http.HttpServletResponse;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

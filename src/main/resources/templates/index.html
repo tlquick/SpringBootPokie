@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" >
 <title>Cherry Bomb</title>
-<link th:href="@{/styles/main.css}" rel="stylesheet" />
-<script type="text/javascript" th:src="@{/webjars/htmx.org/dist/htmx.min.js}"></script>
+<link th:href="@{/styles/main.css}" rel="stylesheet" type="text/css; charset=utf-8" >
 
 </head>
-<body th:style="'background-image:url(' + @{/images/Background.JPG} + '); background-repeat: no-repeat, repeat; background-size: cover;'">
+<body >
 <div class="container"  id="display" hx-boost="true"> 
-	<img src="../static/images/CherryBomb.JPG" th:src="@{'/images/CherryBomb.JPG'}">
+	<img src="../static/images/CherryBomb.JPG" alt="Title:CherryBomb" th:src="@{'/images/CherryBomb.JPG'}">
 	<div class="balance" >
 		<p>Player Balance: $<strong th:text="${playerBalance}">100000</strong>
 		<a th:href="@{/addCredit}" ><button type="button"  class="btn stdBtn">Add $20</button></a>
@@ -19,7 +19,7 @@
 	<table class="table" >
 	      <tr th:each="row: ${images}">
 	          <td th:each="value: ${row}">
-	                  <img th:src="@{${'/images/' + value}}" src="../static/images/Jackpot.JPG">
+	                  <img th:src="@{${'/images/' + value}}" alt="Reel result" src="../static/images/Jackpot.JPG">
 	          </td>
 	      </tr>
 	  </table>

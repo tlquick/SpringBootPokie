@@ -1,14 +1,17 @@
-@charset "ISO-8859-1";
+@charset "utf-8";
 
 strong {
     font-weight: 700;
 }
-
 p {
     font-family: sans-serif;
     font-size: 18px;
 }
-
+body{
+	background-image:url('/images/Background.JPG');
+	background-repeat:no-repeat, repeat;
+	background-size: cover;
+}
 .container{
 	background-color: white;
 	width: 500px;
